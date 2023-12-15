@@ -111,3 +111,79 @@ o/p-> Enter choice S
       
       Enter choice E
       Thank You!
+
+
+def Per_info():
+    name=input('Enter Name: ')
+    age=int(input('Enter Age: '))
+    contact=int(input('Enter contact: '))
+    add=input('Enter address: ')
+    print(f'\nName: {name}\nAge:{age}\nContact:{contact}\nAddress:{add}')
+
+Per_info()
+o/p-> Enter Name: Vaibhav
+      Enter Age: 24
+      Enter contact: 7648161131
+      Enter address: Pune
+      
+      Name: Vaibhav
+      Age:24
+      Contact:7648161131
+      Address:Pune
+
+
+## Types of Arguments
+1) Required arguments- These are the arguments that must be passed to a function. Without them, it throws an error when the function is called.
+def disp(name):
+  print(f'Hello {name}!')
+
+disp('Vaibhav')       ## here 'Vaibhav' is required argument 
+o/p-> Hello Vaibhav!
+
+2) Optional Arguments- Some function parameters take default values while defining the function. And there is no need to provide values for them which makes them optional arguments.
+def product(a, b=4):   ## if no keyword is passed , b takes value of 4
+  return a * b
+print("with default argument: ",product(8))  # 3 is passed to paramater a
+print("Changing the default argument: ",product(8, 5)) # 3 is passed to a and 6 is passed to b (Hence b do not take default value of 4)
+o/p-> with default argument: 32
+      Changing the default argument: 40
+
+3) Positional Arguments- Positional arguments are the values passed to the function in the same order as the parameters specified.
+def full_name(f_name,m_name,l_name):
+  print('Full Name is: ',f_name + ' ' + m_name + ' ' + l_name)
+
+full_name('Johnny', 'Sam', 'Smith')
+o/p-> Full Name is: Johnny Sam Smith
+
+full_name('Smith','Johnny','Sam')
+o/p-> Full Name is: Smith Johnny Sam
+
+4) Keyword argument- Keyword argument is where the name of the parameter is provided while passing the function arguments.
+full_name(l_name='Smith', f_name='Johnny', m_name='Sam')
+o/p-> Full Name is: Johnny Sam Smith
+
+5) Variable-length Arguments (*args, **kwargs)-
+   *args are the non-keyword arguments/positional arguments. We can pass any number of arguments by separating them using commas or by passing a list prefixed with a * symbol (*list)
+   **kwargs are the keyword arguments. We can pass any number of keyword arguments directly or by using a dictionary( key, value pairs).
+
+def print_args_and_kwargs(*args, **kwargs):
+    print("Positional arguments:")
+    for arg in args:
+        print(arg)
+    sum=0
+    for arg in args:
+        sum+=arg
+    print('SUM: ',sum) 
+    print("Keyword arguments:")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+ 
+print_args_and_kwargs(10, 20, 30, name="Sam", age=25)
+o/p-> Positional arguments:
+      10
+      20
+      30
+      SUM: 60 
+      Keyword arguments:
+      name: Sam
+      age: 25
