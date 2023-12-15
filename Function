@@ -1,0 +1,113 @@
+A function is a block of code that performs a specific task. It only runs when it is called.
+
+The function code blocks must start with the keyword def followed by the function name, parentheses( () ), and colon(:).
+def funct_name():
+  Statements
+  return
+
+Types of Functions:-
+
+Built-in library function: These are Standard functions in Python that are available to use
+eg-> print(), len(), sum() etc.
+
+User Defined Function: These types of functions are defined by the user to perform any specific task
+
+def addition():       # Function Definition
+    '''This is my 
+    first function'''
+    a=10
+    b=10
+    return a+b
+
+addition()             # Function Call
+o/p-> 20
+
+## Pass nothing, return nothing Function
+def display():                           ## on running this cell, the body is not exeuted, only display function is passed to compiler
+    print('No parameter passed and nothing returned by function')
+    name='ABC'
+    print(name)
+
+display()                               ## On callin function, it searches for display funcion in compiler and execute the body part .After executing whole function, it returns back to calling obj.
+o/p-> No parameter passed and nothing returned by function
+      ABC
+
+## Pass Parameter, return nothing
+def add(a,b):
+  print('Two numbers passed as parameter but returned nothing')
+  prtin(a+b)
+
+add(10,30)
+o/p-> 40
+
+## Pass Parameter, return something
+def add(a,b):
+  print('Two numbers passed as parameter but returned addition of a and b')
+  return a+b
+
+c=add(10,30)            # value returned by the function can be stored in variable and be used in future
+o/p-> Two number passed as parameters as a and b
+      40                # only 40 is stored in c , not the statement
+
+
+## Pass nothing, return something
+def add():
+  a,b=10,30
+  print('Nothing passed as parameter but returned addition of a and b')
+  return a+b
+
+c=add()
+o/p-> Nothing passed as parameter but returned addition of a and b
+      40
+
+
+
+## WAP to print area and perimeter of shapes
+def square(side):
+    print(f'Area: {side**2}\nPerimeter: {side*4}\n')
+
+def circle(radius):
+    print(f"Area: {(22/7)*(radius**2)}\nCircumference: {2*(22/7)*radius}\n")
+    
+def rectangle(length,breadth):
+    print(f'Area: {length*breadth}\nPerimeter: {2*(length+breadth)}\n')
+
+
+while True:
+    op=input('Enter choice ')
+
+    if op=='S':
+        side=int(input('\nEnter side of square'))
+        square(side)
+    elif op=='C':
+        radius=int(input('\nEnter raidus of circle'))
+        circle(radius)
+    elif op=='R':
+        length=int(input('\nEnter length: '))
+        breadth=int(input('Enter breadth: '))
+        rectangle(length,breadth)
+    elif op=='E':
+        print('Thank You!')
+        break
+
+o/p-> Enter choice S
+
+      Enter side of square10
+      Area: 100
+      Perimeter: 40
+      
+      Enter choice C
+      
+      Enter raidus of circle21
+      Area: 1386.0
+      Circumference: 132.0
+      
+      Enter choice R
+      
+      Enter length: 10
+      Enter breadth: 20
+      Area: 200
+      Perimeter: 60
+      
+      Enter choice E
+      Thank You!
